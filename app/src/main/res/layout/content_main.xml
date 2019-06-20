@@ -1,117 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
-    
-    <RelativeLayout
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/grey_outline"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/soup_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/soup"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/soup_title"
-            android:text="4"
-            android:background="@drawable/text_background"
-            android:textSize="16sp"
-            android:padding="6dp"
-            android:layout_marginLeft="300dp"
-            android:textColor="@color/white" />
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/Image"
-            android:src="@drawable/soup"
-            android:scaleType="centerCrop"
-            android:layout_below="@id/soup_title"/>
+            android:layout_height="250dp"
+            android:background="@drawable/grey_outline"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/soup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/soup"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/soup_title"
+                android:text="4"
+                android:background="@drawable/text_background"
+                android:textSize="16sp"
+                android:padding="6dp"
+                android:layout_marginStart="300dp"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/view_soups"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/Image"
+                android:src="@drawable/soup"
+                android:clickable="true"
+                android:scaleType="centerCrop"
+                android:layout_below="@id/soup_title"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/grey_outline"
-        android:orientation="vertical">
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/pasta_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pasta"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/pasta_title"
-            android:text="4"
-            android:background="@drawable/text_background"
-            android:textSize="16sp"
-            android:padding="6dp"
-            android:layout_marginLeft="300dp"
-            android:textColor="@color/white" />
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/Image"
-            android:src="@drawable/soup"
-            android:scaleType="centerCrop"
-            android:layout_below="@id/pasta_title"/>
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/grey_outline"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/pasta_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pasta"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/pasta_title"
+                android:text="7"
+                android:background="@drawable/text_background"
+                android:textSize="16sp"
+                android:padding="6dp"
+                android:layout_marginStart="300dp"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/view_pasta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/Image"
+                android:src="@drawable/pasta"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:layout_below="@id/pasta_title"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/grey_outline"
-        android:orientation="vertical">
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/pizza_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pizza"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/pizza_title"
-            android:text="4"
-            android:background="@drawable/text_background"
-            android:textSize="16sp"
-            android:padding="6dp"
-            android:layout_marginLeft="300dp"
-            android:textColor="@color/white" />
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/Image"
-            android:src="@drawable/soup"
-            android:scaleType="centerCrop"
-            android:layout_below="@id/pizza_title"/>
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/grey_outline"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/pizza_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pizza"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/pizza_title"
+                android:text="3"
+                android:background="@drawable/text_background"
+                android:textSize="16sp"
+                android:padding="6dp"
+                android:layout_marginStart="300dp"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/view_pizza"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/Image"
+                android:src="@drawable/pizza"
+                android:scaleType="centerCrop"
+                android:layout_below="@id/pizza_title"
+                android:clickable="true"/>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

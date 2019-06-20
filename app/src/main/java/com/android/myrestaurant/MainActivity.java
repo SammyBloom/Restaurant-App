@@ -4,24 +4,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.android.myrestaurant.Fragment.PastaFragment;
+import com.android.myrestaurant.Fragment.PizzaFragment;
+import com.android.myrestaurant.Fragment.SoupFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ImageView soupImg, pastaImg, pizzaImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -30,6 +38,41 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+        final Fragment soupFrag = (Fragment) getSupportFragmentManager().findFragmentById(R.id.soupFrag_container);
+
+        soupImg = findViewById(R.id.view_soups);
+        soupImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SoupFragment fragment = new SoupFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.add(soupFrag, String.valueOf(fragment));
+                transaction.commit();
+
+            }
+        });
+
+        pastaImg = findViewById(R.id.view_pasta);
+        pastaImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PastaFragment fragment = new PastaFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.pastaFrag_container, fragment);
+                transaction.commit();
+            }
+        });
+
+        pizzaImg = findViewById(R.id.view_pizza);
+        pizzaImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PizzaFragment fragment = new PizzaFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.pizzaFrag_container, fragment);
+                transaction.commit();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -79,17 +122,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_menu) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_item_search) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_feedback) {
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_sync) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_help) {
+
+        }  else if (id == R.id.nav_exit) {
 
         }
 
