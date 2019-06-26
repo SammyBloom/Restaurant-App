@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/pastaFrag_container"
     android:layout_width="match_parent"
@@ -9,12 +10,123 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/pastaFrag_container1"
+        android:padding="16dp">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pennine_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/pasta_item"/>
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/pasta_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/pasta"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/shows_meal_image" />
+
+                <TextView
+                    android:id="@+id/delicacy_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pennine_pasta"
+                    android:layout_toEndOf="@id/pasta_image"
+                    android:textSize="22sp"
+                    android:layout_marginStart="30dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/delicacy_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pennine_pasta"
+                    android:layout_toEndOf="@id/pasta_image"
+                    android:layout_below="@id/delicacy_name"
+                    android:textSize="18sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N 800.00"
+                    android:layout_toEndOf="@id/pasta_image"
+                    android:layout_below="@id/delicacy_name1"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="8dp"/>
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/tomato_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/pasta_image1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/tomato_pasta"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/shows_meal_image" />
+
+                <TextView
+                    android:id="@+id/delicacy_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tomato_pasta"
+                    android:layout_toEndOf="@id/pasta_image1"
+                    android:textSize="22sp"
+                    android:layout_marginStart="30dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/delicacy_name3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tomato_pasta"
+                    android:layout_toEndOf="@id/pasta_image1"
+                    android:layout_below="@id/delicacy_name2"
+                    android:textSize="18sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N 1000.00"
+                    android:layout_toEndOf="@id/pasta_image1"
+                    android:layout_below="@id/delicacy_name3"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="8dp"/>
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

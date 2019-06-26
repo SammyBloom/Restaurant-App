@@ -1,5 +1,6 @@
 package com.android.myrestaurant.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.myrestaurant.ChickenPizza;
+import com.android.myrestaurant.PepperoniPizza;
+import com.android.myrestaurant.PrawnSoup;
 import com.android.myrestaurant.R;
+import com.android.myrestaurant.SoupDetails;
+import com.google.android.material.card.MaterialCardView;
 
 public class PizzaFragment extends Fragment {
-    View pizzaFrag;
+
     public PizzaFragment() { }
 
     /**
@@ -36,7 +42,23 @@ public class PizzaFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        pizzaFrag = inflater.inflate(R.layout.fragment_pizza, container, false);
-        return pizzaFrag;
+        View pizzaView = inflater.inflate(R.layout.fragment_pizza, container, false);
+        MaterialCardView normalView = pizzaView.findViewById(R.id.pepperoni_pizza);
+        normalView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent detailIntent = new Intent(getActivity(), PepperoniPizza.class);
+                startActivity(detailIntent);
+            }
+        });
+        MaterialCardView chickView = pizzaView.findViewById(R.id.chicken_pizza);
+        chickView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent prawnIntent = new Intent(getActivity(), ChickenPizza.class);
+                startActivity(prawnIntent);
+            }
+        });
+        return pizzaView;
     }
 }

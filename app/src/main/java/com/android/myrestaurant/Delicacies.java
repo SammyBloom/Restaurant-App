@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -20,12 +21,17 @@ import com.google.android.material.tabs.TabLayout;
 public class Delicacies extends AppCompatActivity {
 
     private ViewPager viewPager;
+    private Toolbar toolbar;
     private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delicacies);
+
+        toolbar = findViewById(R.id.delicacies_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Menu Item");
 
         //      Creates the adapter that will return a fragment for each of the 2 primary sections of the activity
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());

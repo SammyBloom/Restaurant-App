@@ -6,4 +6,7 @@
 
     <color name="white">#FFFFFF</color>
     <color name="light_grey">#D3D3D3</color>
+    <color name="light_grey_trans">#CCD3D3D3</color>
+    <color name="blue">#abd8df</color>
+
 </resources>

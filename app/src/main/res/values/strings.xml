@@ -36,4 +36,23 @@
     <string name="title_activity_dummy">dummy</string>
     <string name="shows_meal_image">shows meal image</string>
     <string name="delicacy_name">Delicacy name</string>
+    <string name="prawn_soup_fullPrice">N 350</string>
+    <string name="prawn_soup">Prawn Soup</string>
+    <string name="normal_soup">Normal Soup</string>
+    <string name="prawn_soup_halfPrice">N 175</string>
+
+    <string name="pennine_pasta">Pennine Romanoff</string>
+    <string name="tomato_pasta">Tomato Sauce Pasta</string>
+    <string name="pennine_pasta_price">N 800</string>
+    <string name="pennine_half_price">N 400</string>
+    <string name="tomato_pasta_price">N 1000</string>
+    <string name="tomato_half_price">N 500</string>
+
+    <string name="pepperoni_pizza">Pepperoni Pizza</string>
+    <string name="chicken_pizza">Chicken Pizza</string>
+    <string name="pepperoni_pizza_price">N 1500</string>
+    <string name="pepperoni_half_price">N 750</string>
+    <string name="chicken_pizza_price">N 2000</string>
+    <string name="chicken_half_price">N 1000</string>
+
 </resources>

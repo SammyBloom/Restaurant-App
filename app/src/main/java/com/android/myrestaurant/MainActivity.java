@@ -1,5 +1,6 @@
 package com.android.myrestaurant;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,11 +47,8 @@ public class MainActivity extends AppCompatActivity
         soupImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SoupFragment fragment = new SoupFragment();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.add(soupFrag, String.valueOf(fragment));
-                transaction.commit();
-
+                Intent soupIntent = new Intent(MainActivity.this, Delicacies.class);
+                startActivity(soupIntent);
             }
         });
 
@@ -58,10 +56,8 @@ public class MainActivity extends AppCompatActivity
         pastaImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PastaFragment fragment = new PastaFragment();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.pastaFrag_container, fragment);
-                transaction.commit();
+                Intent pastaIntent = new Intent(MainActivity.this, Delicacies.class);
+                startActivity(pastaIntent);
             }
         });
 
@@ -69,10 +65,8 @@ public class MainActivity extends AppCompatActivity
         pizzaImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PizzaFragment fragment = new PizzaFragment();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.pizzaFrag_container, fragment);
-                transaction.commit();
+                Intent pizzaIntent = new Intent(MainActivity.this, Delicacies.class);
+                startActivity(pizzaIntent);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

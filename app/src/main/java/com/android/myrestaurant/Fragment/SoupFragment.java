@@ -1,5 +1,6 @@
 package com.android.myrestaurant.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.myrestaurant.PrawnSoup;
 import com.android.myrestaurant.R;
+import com.android.myrestaurant.SoupDetails;
+import com.google.android.material.card.MaterialCardView;
 
 public class SoupFragment extends Fragment {
 
-    View soupFrag;
     public SoupFragment() { }
 
     /**
@@ -37,7 +40,26 @@ public class SoupFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        soupFrag = inflater.inflate(R.layout.fragment_soup, container, false);
-        return soupFrag;
+       View  view = inflater.inflate(R.layout.fragment_soup, container, false);
+        MaterialCardView normalView = view.findViewById(R.id.normal_soup);
+        normalView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent detailIntent = new Intent(getActivity(), SoupDetails.class);
+                startActivity(detailIntent);
+            }
+        });
+        MaterialCardView prawnView = view.findViewById(R.id.prawn_soup);
+        prawnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent prawnIntent = new Intent(getActivity(), PrawnSoup.class);
+                startActivity(prawnIntent);
+            }
+        });
+
+        return view;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.android.myrestaurant.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.myrestaurant.PenninePasta;
+import com.android.myrestaurant.PrawnSoup;
 import com.android.myrestaurant.R;
+import com.android.myrestaurant.SoupDetails;
+import com.android.myrestaurant.TomatoPasta;
+import com.google.android.material.card.MaterialCardView;
 
 public class PastaFragment extends Fragment {
-    View pastaFrag;
+
     public PastaFragment() { }
 
     /**
@@ -36,7 +42,27 @@ public class PastaFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        pastaFrag = inflater.inflate(R.layout.fragment_pasta, container, false);
+        View pastaFrag = inflater.inflate(R.layout.fragment_pasta, container, false);
+        MaterialCardView pennineView = pastaFrag.findViewById(R.id.pennine_card);
+        pennineView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pennineIntent = new Intent(getActivity(), PenninePasta.class);
+                startActivity(pennineIntent);
+            }
+        });
+        MaterialCardView tomatoView = pastaFrag.findViewById(R.id.tomato_card);
+        tomatoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pastaIntent = new Intent(getActivity(), TomatoPasta.class);
+                startActivity(pastaIntent);
+            }
+        });
         return pastaFrag;
+    }
+
+    public static PastaFragment newInstance(){
+        return new PastaFragment();
     }
 }

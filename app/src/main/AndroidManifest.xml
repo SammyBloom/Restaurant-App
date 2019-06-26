@@ -9,10 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PrawnSoup"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".SoupDetails"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".PepperoniPizza"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".ChickenPizza"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".PenninePasta"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".TomatoPasta"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
-            android:name=".Delicacies"
-            android:label="@string/title_activity_delicacies"
-            android:theme="@style/AppTheme.NoActionBar" />
+        android:name=".Delicacies"
+        android:label="@string/title_activity_delicacies"
+        android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
