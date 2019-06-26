@@ -1,9 +1,11 @@
 package com.android.myrestaurant;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,5 +35,16 @@ public class PrawnSoup extends AppCompatActivity {
 
         soupPrice_half = findViewById(R.id.price_half);
         soupPrice_half.setText(R.string.prawn_soup_halfPrice);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

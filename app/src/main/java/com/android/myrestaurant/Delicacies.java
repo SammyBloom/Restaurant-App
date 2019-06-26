@@ -31,6 +31,7 @@ public class Delicacies extends AppCompatActivity {
 
         toolbar = findViewById(R.id.delicacies_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Menu Item");
 
         //      Creates the adapter that will return a fragment for each of the 2 primary sections of the activity
@@ -52,8 +53,14 @@ public class Delicacies extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                int id = item.getItemId();
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public static class PlaceholderFragment extends Fragment{

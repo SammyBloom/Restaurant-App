@@ -16,7 +16,7 @@
             android:title="@string/menu_item_search" />
         <item
             android:id="@+id/nav_feedback"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_message_black_24dp"
             android:title="@string/menu_feedback" />
         <item
             android:id="@+id/nav_sync"
@@ -24,15 +24,15 @@
             android:title="@string/menu_sync" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_info_black_24dp"
             android:title="@string/menu_about" />
         <item
             android:id="@+id/nav_help"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_help_black_24dp"
             android:title="@string/menu_help" />
         <item
             android:id="@+id/nav_exit"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_power_settings_new_black_24dp"
             android:title="@string/menu_exit" />
     </group>
 </menu>
